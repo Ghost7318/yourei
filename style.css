@@ -110,7 +110,9 @@ h4{
 }
 
 h3{
-    color: #60CDC7;
+    color: white;
+    border-bottom: 2px solid white;
+    padding-bottom: 20px;
     text-align: center;
 }
 

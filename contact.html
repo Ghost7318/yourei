@@ -77,5 +77,37 @@
 });
 </script>
 
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+
+        const btn = document.getElementById('js-hamburger');
+        const nav = document.getElementById('js-nav');
+        const navLinks = document.querySelectorAll('.sp-nav a');
+
+        if (btn && nav) {
+          btn.addEventListener('click', () => {
+            btn.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+          });
+
+          navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              btn.classList.remove('is-active');
+              nav.classList.remove('is-active');
+            });
+          });
+        }
+    });
+
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+
    </body>
    </html>
